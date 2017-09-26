@@ -1,0 +1,107 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": "OPEN_CFSA_CASE",
+            "type": "boolean",
+            "answer": {
+                "trueKey": "YES",
+                "falseKey": "NO"
+            },
+            "continueRules": {
+                "true": [
+                    2
+                ]
+            },
+            "start": true
+        },
+        {
+            "id": 2,
+            "question": "IS_CHILD_EMANCIPATED",
+            "type": "boolean",
+            "answer": {
+                "trueKey": "YES",
+                "falseKey": "NO"
+            },
+            "continueRules": {
+                "true": [
+                    3,
+                    4
+                ]
+            },
+            "start": false
+        },
+        {
+            "id": 3,
+            "question": "BETWEEN_18_AND_23",
+            "type": "boolean",
+            "answer": {
+                "trueKey": "YES",
+                "falseKey": "NO"
+            },
+            "start": false
+        },
+        {
+            "id": 4,
+            "question": "BETWEEN_21_AND_24",
+            "type": "boolean",
+            "answer": {
+                "trueKey": "YES",
+                "falseKey": "NO"
+            },
+            "continueRules": {
+                "true": [
+                    5
+                ]
+            },
+            "start": false
+        },
+        {
+            "id": 5,
+            "question": "PARENT_SUBSTANCE_ABUSE",
+            "type": "boolean",
+            "answer": {
+                "trueKey": "YES",
+                "falseKey": "NO"
+            },
+            "continueRules": {
+                "false": [
+                    6
+                ]
+            },
+            "start": false
+        },
+        {
+            "id": 6,
+            "question": "CHILD_IN_AFTERCARE",
+            "type": "boolean",
+            "answer": {
+                "trueKey": "YES",
+                "falseKey": "NO"
+            },
+            "start": false
+        }
+    ],
+    "programs": [
+        {
+            "id": 4,
+            "program": "TRANSITIONAL_HOUSING",
+            "questions": {
+                "1": true,
+                "2": true,
+                "4": true,
+                "5": false,
+                "6": true
+            }
+        },
+        {
+            "id": 5,
+            "program": "YOUTH_AFTERCARE",
+            "questions": {
+                "1": true,
+                "2": true,
+                "3": true
+            }
+        }
+    ]
+}
